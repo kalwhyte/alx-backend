@@ -4,7 +4,7 @@ This project contains tasks for learning to paginate data.<br/>
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/3646eb02de6527ca5d83.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230821T105245Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=11654264335a1b5ba58937329c3c06b621530ef344a709f40a7882a25109009a)
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/746187b76bea1f46030e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230821T105245Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5a634ef814b7c8ad9e0c02e32cedb091ff5b87d6ae48b43c76d0db3066dd125c)
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/665ce871c2ecc66a8e71.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230821T105245Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ba5acf559cc9e5fbcb342d69eaf22e88b1d0d1d385601b40560665cca9cd056b)
-
+![Alt text](image-1.png)
 ## Resources
 
 #### Read or watch
