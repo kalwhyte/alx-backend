@@ -2,6 +2,7 @@
 """ A Basic Babel setup """
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from typing import Union, Dict
 
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
@@ -39,18 +40,17 @@ def get_locale():
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
-def get_user():
+def get_user() -> Union[dict, None]:
     """ Return a user dictionary or None """
     user_id = request.args.get('login_as')
-    if user_id in users:
-        return users.get(user_id)
-    else:
-        return None
+    if user_id:
+        return users.get(int(user_id))
+    return None
 
 
 @app.before_request
-def before_request():
-    """ Return a user if any """
+def before_request() -> None:
+    """ Return a user if any, using get_user """
     g.user = get_user()
 
 
