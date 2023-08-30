@@ -41,7 +41,8 @@ def get_locale():
 
 
 def get_user() -> Union[dict, None]:
-    """ Return a user dictionary or None """
+    """ Return a user based on their id.
+    """
     user_id = request.args.get('login_as')
     if user_id:
         return users.get(int(user_id))
@@ -50,8 +51,10 @@ def get_user() -> Union[dict, None]:
 
 @app.before_request
 def before_request() -> None:
-    """ Return a user if any, using get_user """
-    g.user = get_user()
+    """ Routine resolutions to be performed before each request
+    """
+    user = get_user()
+    g.user = user
 
 
 @app.route("/")
