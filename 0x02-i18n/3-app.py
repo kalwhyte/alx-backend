@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" A Basic Babel setup
+""" A Basic Flask app using internal support
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel
