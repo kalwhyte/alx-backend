@@ -25,20 +25,6 @@ users = {
 }
 
 
-@babel.localeselector
-def get_locale():
-    """ The get locale method """
-    queries = request.query_string.decode('utf-8').split('&')
-    query_table = dict(map(
-        lambda x: (x if '=' in x else '{}='.format(x)).split('='),
-        queries,
-    ))
-    if 'locale' in query_table:
-        if query_table['locale'] in app.config["LANGUAGES"]:
-            return query_table['locale']
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
-
-
 def get_user() -> Union[dict, None]:
     """ Return a user based on their id.
     """
@@ -54,6 +40,16 @@ def before_request() -> None:
     """
     user = get_user()
     g.user = user
+
+
+@babel.localeselector
+def get_locale():
+    """ This method gets locale webpage
+    """
+    locale = request.args.get('locale', '')
+    if locale in app.config["LANGUAGES"]:
+        return locale
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route("/")
