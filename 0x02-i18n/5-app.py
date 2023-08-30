@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" A Basic Babel setup """
+""" A abel and Flask app with internationalization support.
+"""
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from typing import Union, Dict
@@ -53,7 +54,7 @@ def get_locale():
 
 
 @app.route("/")
-def index():
+def index() -> str:
     """ Return render template """
     return render_template('5-index.html')
 
