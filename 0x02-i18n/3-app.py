@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" A Basic Flask app using internal support
+""" A Basic Flask app using internationalization support.
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel
