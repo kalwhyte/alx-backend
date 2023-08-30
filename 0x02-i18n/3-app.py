@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" A Basic Babel setup """
+""" A Basic Babel setup
+"""
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
