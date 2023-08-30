@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-""" A abel and Flask app with internationalization support.
+""" A Flask app with internationalization support.
 """
-from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from typing import Union, Dict
+from flask import Flask, render_template, request, g
 
 
 class Config:
-    """ class attributes equal to en & fr
+    """ The Flask Babel configuration
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -26,7 +26,7 @@ users = {
 }
 
 
-def get_user() -> Union[dict, None]:
+def get_user():
     """ Return a user based on their id.
     """
     user_id = request.args.get('login_as')
