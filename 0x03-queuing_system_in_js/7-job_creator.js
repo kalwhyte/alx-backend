@@ -51,22 +51,18 @@ const jobs = [
 const kue = require('kue');
 const queue = kue.createQueue();
 
-//  write a loop that will go through the array jobs and for each object:
-//  create a queue named push_notification_code_2 with the job data
-const jobData = {
-	phoneNumber: '4153518780',
-	message: 'This is the code 1234 to verify your account'
-};
+/**
+ * Loop through each job in the array jobs and create a queue named
+ * push_notification_code_2 with each job data
+ */
+for (const jobData of jobs) {
+	const job = queue.create('push_notification_code_2', jobData).save((err) => {
+		if (!err) console.log(`Notification job created: ${job.id}`);
+	});
+	job
+	.on('complete', () => console.log(`Notification job ${job.id} completed`))
 
-const job = queue.create('push_notification_code_2', jobData).save((err) => {
-	if (!err) console.log(`Notification job created: ${job.id}`);
-});
+	.on('failed', (err) => console.log(`Notification job ${job.id} failed: ${err}`))
 
-//  On job cmpletion, print out Notification job created JOB_ID
-job.on('complete', () => console.log(`Notification job ${job.id} completed`));
-
-//  On job failure, print out Notification job JOB_ID failed
-job.on('failed', (err) => console.log(`Notification job ${job.id} failed: ${err}`));
-
-//  On job progress, print out Notification job JOB_ID PERCENTAGE_COMPLETE%
-job.on('progress', (progress) => console.log(`Notification job ${job.id} ${progress}% complete`));
+	.on('progress', (progress) => console.log(`Notification job ${job.id} ${progress}% complete`));
+}
